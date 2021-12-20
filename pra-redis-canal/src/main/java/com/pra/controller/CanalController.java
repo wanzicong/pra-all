@@ -1,27 +1,26 @@
-package com.pra.prarediscanal;
+package com.pra.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.pra.mysql.dao.CanalDao;
 import com.pra.mysql.entity.CanalEntity;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-@SpringBootTest
-class PraRedisCanalApplicationTests {
+@RestController
+@RequestMapping("/canal")
+public class CanalController {
+
     @Resource
     private CanalDao canalDao;
 
-    @Test
-    void contextLoads() {
-    }
-
-    @Test
-    void insert_() {
+    @GetMapping("insert")
+    public Object insert_() {
         CanalEntity entity = new CanalEntity();
         entity.setId(UUID.randomUUID().toString());
         entity.setAge(19);
@@ -29,21 +28,22 @@ class PraRedisCanalApplicationTests {
         entity.setName("CALLAN");
         entity.setCreateDatetime(new Date());
         canalDao.insert(entity);
+        return "ok";
     }
 
-    @Test
-    void delete_() {
+    @DeleteMapping("delete")
+    public Object delete_() {
         List<CanalEntity> canalEntities = canalDao.selectList(new QueryWrapper<CanalEntity>().lambda().eq(CanalEntity::getAge, 19));
         CanalEntity canalEntity = canalEntities.get(0);
         canalDao.deleteById(canalEntity.getId());
+        return "ok";
     }
 
-    @Test
-    void update_() {
+    @PutMapping("update")
+    public Object update_() {
         List<CanalEntity> canalEntities = canalDao.selectList(new QueryWrapper<CanalEntity>().lambda().eq(CanalEntity::getAge, 19));
         CanalEntity canalEntity = canalEntities.get(0);
-        canalEntity.setCreateDatetime(new Date());
         canalDao.updateById(canalEntity);
+        return "ok";
     }
-
 }
