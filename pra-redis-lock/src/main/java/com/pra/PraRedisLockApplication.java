@@ -1,4 +1,4 @@
-package com.pra.praredislock;
+package com.pra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
