@@ -15,7 +15,7 @@ import top.javatool.canal.client.handler.EntryHandler;
 @Component
 @CanalTable(value = "canal_entity")
 // 监听数据库的名字在canal的 的example文件中的配置文件中指定的默认地址
-public class CanalMonitor implements EntryHandler<CanalEntity> {
+public class CanalEntityMonitor implements EntryHandler<CanalEntity> {
     @Override
     public void insert(CanalEntity canalEntity) {
         //  监听添加的数据
