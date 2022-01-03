@@ -42,4 +42,16 @@ public class CompletableTest {
         CompletableFuture.allOf(future);
     }
 
+
+    @Test
+    public void testSyc(){
+        HashMap<String, String> lock = new HashMap<>();
+        new Thread(()->{
+            // 同步代码块
+            synchronized(lock){
+                System.out.println("同步代码块");
+            }
+        }).start();
+    }
+
 }

@@ -11,7 +11,10 @@ public class RedisLock {
 
     //https://www.xiaerblog.com/articles/2021/06/20/1624178582211.html
     public static void main(String[] args) {
+        test();
+    }
 
+    private static void test() {
         // 设置连接redis的配置信息 单机信息 主从信息 sentinel信息 cluster信息
         Config config = new Config();
         config.useSingleServer().setAddress("redis://47.115.42.52:6380")
@@ -28,6 +31,8 @@ public class RedisLock {
 
         // 获取锁信息
         RLock lock = client.getLock("lock");
+        String name = "wanzicong";
+        System.out.println(name);
         //设置锁
         lock.lock();
         //释放锁
