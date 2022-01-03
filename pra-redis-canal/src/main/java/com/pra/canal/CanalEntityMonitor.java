@@ -11,6 +11,7 @@ import top.javatool.canal.client.handler.EntryHandler;
  * question: 使用rabbitmq 异步监听消息 如何保证消息消费的顺序性
  * answer: (同一个消费队列的时间)消费消息的时间关闭手动确认机制 手动ack
  *         只有当一个消息被确认消费的时间才会消费下一个消息对象
+ * @author wanzicong
  */
 @Component
 @CanalTable(value = "canal_entity")
@@ -38,6 +39,9 @@ public class CanalEntityMonitor implements EntryHandler<CanalEntity> {
         System.out.println(after);
 
         // 将信息发送给消息中间件 异步更新缓存redis 中的数据
+        String id = after.getId();
+        // do everything what you wan to do
+
     }
 
     @Override
