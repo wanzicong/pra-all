@@ -3,12 +3,10 @@ package com.pra.prademo;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 @SpringBootTest
-class PraDemoApplicationTests {
-
+public class ThreadTest {
     @Test
-    void contextLoads() {
-        System.out.println("test  ");
+    public void test() {
+        System.out.println("thread test....");
     }
 }

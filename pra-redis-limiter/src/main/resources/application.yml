@@ -1,0 +1,7 @@
+server:
+  port: 3333
+
+spring:
+  redis:
+    host: 192.168.0.93
+    password: 123456
