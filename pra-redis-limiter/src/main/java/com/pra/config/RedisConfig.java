@@ -1,4 +1,4 @@
-package com.pra.config;
+package com.pra.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
