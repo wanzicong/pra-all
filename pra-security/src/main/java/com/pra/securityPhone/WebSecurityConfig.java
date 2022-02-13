@@ -20,6 +20,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import java.util.Collections;
 import java.util.List;
 
+
+/*
+* https://gitee.com/flying_code_cloud/projects
+* https://github.com/AutismSuperman/springsecurity-example
+*
+* */
+
 /**
  * UsernamePasswordAuthenticationFilter拦截登录请求
  * UsernamePasswordAuthenticationFilter获取到用户名和密码构造一个UsernamePasswordAuthenticationToken传入AuthenticationManager
